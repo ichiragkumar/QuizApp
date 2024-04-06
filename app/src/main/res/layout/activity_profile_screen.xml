@@ -7,4 +7,59 @@
     android:layout_height="match_parent"
     tools:context=".ProfileScreen">
 
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="251dp"
+        android:layout_height="54dp"
+        android:hint="Enter Full Name"
+        android:background="@drawable/shadow_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.106" />
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="106dp"
+        android:layout_height="53dp"
+        android:background="@drawable/shadow_background"
+        android:hint="Enter Age"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <Spinner
+        android:id="@+id/spinnerGender"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:background="@drawable/shadow_background"
+        android:hint="Gender"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="236dp"
+        android:layout_height="57dp"
+        android:background="@drawable/shadow_background"
+        android:text="SAVE"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.862" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
