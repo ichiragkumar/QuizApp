@@ -3,12 +3,17 @@ package com.example.quizapp
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -17,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -24,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.sql.DataSource
 
 class ProfilePage : AppCompatActivity() {
 
@@ -55,6 +63,18 @@ class ProfilePage : AppCompatActivity() {
 
         val fetchButton = findViewById<Button>(R.id.logout)
         val currentUser = FirebaseAuth.getInstance().currentUser
+
+
+        fetchButton.setOnClickListener {
+            val currentUser = FirebaseAuth.getInstance().currentUser
+            if (currentUser != null) {
+                FirebaseAuth.getInstance().signOut()
+                Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
+                // Redirect the user to the login screen or any other desired action after logout
+            } else {
+                Toast.makeText(this, "No user is currently logged in", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         val userId = currentUser?.uid ?: ""
 
@@ -151,9 +171,38 @@ class ProfilePage : AppCompatActivity() {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
             selectedImageUri = data.data
             // Load the selected image into ImageView if needed
+//            Glide.with(this)
+//                .load(selectedImageUri)
+//                .into(imageButtonProfilePhoto)
+
+
             Glide.with(this)
                 .load(selectedImageUri)
                 .into(imageButtonProfilePhoto)
+                .waitForLayout() // Wait until the layout is done
+
+            // Adjust ImageButton dimensions if the image is larger
+            val bitmap: Bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(selectedImageUri!!))
+            val imageWidth = bitmap.width
+            val imageHeight = bitmap.height
+            val viewWidth = imageButtonProfilePhoto.width
+            val viewHeight = imageButtonProfilePhoto.height
+
+            if (imageWidth > viewWidth || imageHeight > viewHeight) {
+                val params = imageButtonProfilePhoto.layoutParams
+                params.width = imageWidth
+                params.height = imageHeight
+                imageButtonProfilePhoto.layoutParams = params
+                imageButtonProfilePhoto.scaleType = ImageView.ScaleType.CENTER_CROP
+            }
+
+
+
+
+
+
+
+
         }
     }
 
