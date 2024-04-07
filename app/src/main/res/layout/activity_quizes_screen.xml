@@ -9,22 +9,25 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="273dp"
-        android:layout_height="41dp"
-        android:text="Hii Quizes"
+        android:layout_width="336dp"
+        android:layout_height="73dp"
+        android:background="@drawable/shadow_background"
+        android:gravity="center"
+        android:text="Quizes"
+        android:textSize="32dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.028" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="97dp"
         android:layout_height="101dp"
-        android:background="@drawable/shadow_background"
         android:scaleType="fitXY"
+        android:background="@drawable/rounded_image_button_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.095"
@@ -32,6 +35,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19"
         app:srcCompat="@drawable/gk" />
+
+
 
     <ImageButton
         android:id="@+id/imageButton3"

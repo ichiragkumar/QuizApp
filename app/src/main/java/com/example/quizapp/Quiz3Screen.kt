@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,6 +23,8 @@ class Quiz3Screen : AppCompatActivity() {
     private lateinit var nextButton: Button
     private lateinit var previousButton: Button
     private lateinit var quitButton: Button
+
+    private var previousCheckedRadioButton: RadioButton? = null
 
 
     private var currentQuestionIndex = 0
@@ -86,6 +89,10 @@ class Quiz3Screen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_quiz3_screen)
 
+//        questions.shuffle()
+
+
+
 
         questionTextView = findViewById(R.id.questionTextView)
         optionRadioGroup = findViewById(R.id.optionRadioGroup)
@@ -98,16 +105,23 @@ class Quiz3Screen : AppCompatActivity() {
         quitButton = findViewById(R.id.quitButton)
 
         updateQuestion()
+
         nextButton.setOnClickListener {
-            checkAnswer() // Check the answer before moving to the next question
-            if (currentQuestionIndex < questions.size - 1) {
-                currentQuestionIndex++
-                updateQuestion()
-                if (currentQuestionIndex == questions.size - 1) {
-                    nextButton.text = "Submit"
+            val checkedRadioButtonId = optionRadioGroup.checkedRadioButtonId
+            if (checkedRadioButtonId != -1) {
+                checkAnswer() // Check the answer before moving to the next question
+                if (currentQuestionIndex < questions.size - 1) {
+                    currentQuestionIndex++
+                    updateQuestion()
+                    if (currentQuestionIndex == questions.size - 1) {
+                        nextButton.text = "Submit"
+                    }
+                } else {
+                    navigateToScoreScreen()
                 }
             } else {
-                navigateToScoreScreen()
+                // Show warning to the user
+                Toast.makeText(this, "Please select an option.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -123,6 +137,8 @@ class Quiz3Screen : AppCompatActivity() {
             onBackPressed()
         }
     }
+
+
     private fun updateQuestion() {
         val currentQuestion = questions[currentQuestionIndex]
         questionTextView.text = currentQuestion.question
@@ -131,6 +147,9 @@ class Quiz3Screen : AppCompatActivity() {
         option3RadioButton.text = currentQuestion.options[2]
         option4RadioButton.text = currentQuestion.options[3]
         optionRadioGroup.clearCheck()
+
+
+
     }
 
     private fun checkAnswer() {

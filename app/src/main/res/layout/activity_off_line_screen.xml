@@ -7,11 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".OffLineScreen">
 
+    <Button
+        android:id="@+id/roundedButton"
+        android:layout_width="264dp"
+        android:layout_height="67dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="go back"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You Are Offline Baby"
+        android:text="You Are Offline "
         android:textSize="40dp"
         android:gravity="center"
         android:textStyle="bold"

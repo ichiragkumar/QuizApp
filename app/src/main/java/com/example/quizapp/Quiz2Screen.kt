@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -101,18 +102,39 @@ class Quiz2Screen : AppCompatActivity() {
 
 
         updateQuestion()
+
         nextButton.setOnClickListener {
-            checkAnswer() // Check the answer before moving to the next question
-            if (currentQuestionIndex < questions.size - 1) {
-                currentQuestionIndex++
-                updateQuestion()
-                if (currentQuestionIndex == questions.size - 1) {
-                    nextButton.text = "Submit"
+            val checkedRadioButtonId = optionRadioGroup.checkedRadioButtonId
+            if (checkedRadioButtonId != -1) {
+                checkAnswer() // Check the answer before moving to the next question
+                if (currentQuestionIndex < questions.size - 1) {
+                    currentQuestionIndex++
+                    updateQuestion()
+                    if (currentQuestionIndex == questions.size - 1) {
+                        nextButton.text = "Submit"
+                    }
+                } else {
+                    navigateToScoreScreen()
                 }
             } else {
-                navigateToScoreScreen()
+                // Show warning to the user
+                Toast.makeText(this, "Please select an option.", Toast.LENGTH_SHORT).show()
             }
         }
+
+
+//        nextButton.setOnClickListener {
+//            checkAnswer() // Check the answer before moving to the next question
+//            if (currentQuestionIndex < questions.size - 1) {
+//                currentQuestionIndex++
+//                updateQuestion()
+//                if (currentQuestionIndex == questions.size - 1) {
+//                    nextButton.text = "Submit"
+//                }
+//            } else {
+//                navigateToScoreScreen()
+//            }
+//        }
 
 
         previousButton.setOnClickListener {

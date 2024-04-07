@@ -22,6 +22,15 @@ class OffLineScreen : AppCompatActivity() {
             insets
         }
 
+        // go to MaiActivity
+        val gotoSignUpScreen = findViewById<Button>(R.id.roundedButton)
+        gotoSignUpScreen.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
         if (isOnline()) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
