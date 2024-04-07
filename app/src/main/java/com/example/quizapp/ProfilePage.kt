@@ -69,6 +69,9 @@ class ProfilePage : AppCompatActivity() {
             val currentUser = FirebaseAuth.getInstance().currentUser
             if (currentUser != null) {
                 FirebaseAuth.getInstance().signOut()
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
                 // Redirect the user to the login screen or any other desired action after logout
             } else {
@@ -82,7 +85,7 @@ class ProfilePage : AppCompatActivity() {
         editTextAge = findViewById(R.id.editTextAge)
         spinnerGender = findViewById(R.id.spinnerGender)
         buttonSignUp = findViewById(R.id.buttonSignUp)
-        imageButtonProfilePhoto = findViewById(R.id.imageButtonProfilePhoto)
+
 
         val spinnerGenderForItem: Spinner = findViewById(R.id.spinnerGender)
         val genderOptions = arrayOf("Male", "Female")
@@ -92,10 +95,6 @@ class ProfilePage : AppCompatActivity() {
 
         buttonSignUp.setOnClickListener {
             signUpUser()
-        }
-
-        imageButtonProfilePhoto.setOnClickListener {
-            openFileChooser()
         }
 
         // Check if the user is logged in and fill the email and userId fields
@@ -109,12 +108,6 @@ class ProfilePage : AppCompatActivity() {
     }
 
     // Function to open file chooser
-    private fun openFileChooser() {
-        val intent = Intent()
-        intent.type = "image/*"
-        intent.action = Intent.ACTION_GET_CONTENT
-        startActivityForResult(intent, PICK_IMAGE_REQUEST)
-    }
 
     private fun signUpUser() {
         val name = editTextName.text.toString().trim()
@@ -133,10 +126,7 @@ class ProfilePage : AppCompatActivity() {
             return
         }
 
-        if (selectedImageUri == null) {
-            Toast.makeText(this, "Please select a profile photo", Toast.LENGTH_SHORT).show()
-            return
-        }
+
 
         val currentTime = getCurrentTime()
 
@@ -144,7 +134,7 @@ class ProfilePage : AppCompatActivity() {
         val currentUser = auth.currentUser
         val email = currentUser?.email ?: ""
         val userId = currentUser?.uid ?: ""
-        val user = User(name, age, gender, currentTime, selectedImageUri.toString(), email, userId)
+        val user = User(name, age, gender, currentTime, email, userId)
 
         // Save user to the database
         saveUserToDatabase(user)
@@ -168,46 +158,8 @@ class ProfilePage : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
-            selectedImageUri = data.data
-            // Load the selected image into ImageView if needed
-//            Glide.with(this)
-//                .load(selectedImageUri)
-//                .into(imageButtonProfilePhoto)
-
-
-            Glide.with(this)
-                .load(selectedImageUri)
-                .into(imageButtonProfilePhoto)
-                .waitForLayout() // Wait until the layout is done
-
-            // Adjust ImageButton dimensions if the image is larger
-            val bitmap: Bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(selectedImageUri!!))
-            val imageWidth = bitmap.width
-            val imageHeight = bitmap.height
-            val viewWidth = imageButtonProfilePhoto.width
-            val viewHeight = imageButtonProfilePhoto.height
-
-            if (imageWidth > viewWidth || imageHeight > viewHeight) {
-                val params = imageButtonProfilePhoto.layoutParams
-                params.width = imageWidth
-                params.height = imageHeight
-                imageButtonProfilePhoto.layoutParams = params
-                imageButtonProfilePhoto.scaleType = ImageView.ScaleType.CENTER_CROP
-            }
-
-
-
-
-
-
-
 
         }
     }
 
 
-
-
-
-}

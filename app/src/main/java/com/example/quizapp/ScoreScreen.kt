@@ -1,6 +1,8 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,5 +24,13 @@ class ScoreScreen : AppCompatActivity() {
 
         val scoreTextView: TextView = findViewById(R.id.scoreTextView)
         scoreTextView.text = "Your Score: $score"
+
+        // go to QuizsScreen
+        val gotoQuizessScreen = findViewById<Button>(R.id.button)
+        gotoQuizessScreen.setOnClickListener {
+            val intent = Intent(this, QuizesScreen::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

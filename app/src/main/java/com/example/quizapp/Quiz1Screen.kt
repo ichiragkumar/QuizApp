@@ -28,14 +28,14 @@ class Quiz1Screen : AppCompatActivity() {
     private val questions = listOf(
         Question("1.  What is the capital of France?", listOf("London", "Berlin", "Paris", "Madrid"), 2),
         Question("2.  What is the largest planet in our solar system?", listOf("Earth", "Mars", "Jupiter", "Venus"), 2),
-        Question("3.  What is the capital of France?", listOf("London", "Berlin", "Paris", "Madrid"), 2),
-        Question("4.  What is the largest planet in our solar system?", listOf("Earth", "Mars", "Jupiter", "Venus"), 2),
-        Question("5.  What is the capital of France?", listOf("London", "Berlin", "Paris", "Madrid"), 2),
-        Question("6.  What is the largest planet in our solar system?", listOf("Earth", "Mars", "Jupiter", "Venus"), 2),
-        Question("7.  What is the capital of France?", listOf("London", "Berlin", "Paris", "Madrid"), 2),
+        Question("3.  In which year was Python first released?", listOf("1989", "1991", "2000", "2010"), 0),
+        Question("4.  What is the symbol for the element gold?", listOf("Fe", "Au", "Cu", "Ag"), 1),
+        Question("5.  How many sides does a hexagon have?", listOf("4", "5", "6", "7"), 2),
+        Question("6.  What is the name of the tallest mountain in the world?", listOf("Mount Everest", "K2", "Kangchenjunga", "Lhotse"), 0),
+        Question("7.  Which search engine is developed by Google?", listOf("Bing", "DuckDuckGo", "Yahoo", "Google Search"), 3),
         Question("8.  What is the largest planet in our solar system?", listOf("Earth", "Mars", "Jupiter", "Venus"), 2),
-        Question("9.  What is the capital of France?", listOf("London", "Berlin", "Paris", "Madrid"), 2),
-        Question("10. What is the largest planet in our solar system?", listOf("Earth", "Mars", "Jupiter", "Venus"), 2),
+        Question("9.  What is the scientific name for a human?", listOf("Homo Sapiens", "Panthera Leo", "Ursus Arctos", "Canis Lupus"), 0),
+        Question("10. What is the currency of Japan?", listOf("Euro", "Dollar", "Yen", "Yuan"), 2),
 
         // Add more questions here
     )

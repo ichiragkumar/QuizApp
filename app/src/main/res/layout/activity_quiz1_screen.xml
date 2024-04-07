@@ -1,84 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Quiz1Screen">
 
-    <TextView
-        android:id="@+id/questionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Question"
-        android:textSize="18sp" />
-
-    <RadioGroup
-        android:id="@+id/optionRadioGroup"
-        android:layout_width="506dp"
-        android:layout_height="168dp"
-        android:layout_below="@id/questionTextView"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp">
-
-        <RadioButton
-            android:id="@+id/option1RadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 1" />
-
-        <RadioButton
-            android:id="@+id/option2RadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 2" />
-
-        <RadioButton
-            android:id="@+id/option3RadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 3" />
-
-        <RadioButton
-            android:id="@+id/option4RadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 4" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/previousButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/optionRadioGroup"
-        android:layout_margin="16dp"
-        android:text="Previous" />
-
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/optionRadioGroup"
-        android:layout_toEndOf="@id/previousButton"
-        android:layout_margin="16dp"
-        android:text="Next" />
 
     <Button
         android:id="@+id/quitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/optionRadioGroup"
+        android:layout_width="315dp"
+        android:layout_height="61dp"
         android:layout_margin="16dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="666dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_toEndOf="@id/nextButton"
-        android:text="Quit" />
+        android:text="Quit"
+        android:textSize="20sp"
+        app:cornerRadius="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.907"
+        tools:ignore="NotSibling" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="151dp"
+        android:layout_height="55dp"
+        android:text="Next"
+        android:textSize="20sp"
+        app:cornerRadius="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.791"
+        tools:ignore="NotSibling" />
+
+    <Button
+        android:id="@+id/previousButton"
+        android:layout_width="140dp"
+        android:layout_height="55dp"
+        android:layout_margin="16dp"
+        android:text="Previous"
+        android:textSize="20sp"
+        app:cornerRadius="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.799"
+        tools:ignore="NotSibling" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="693dp"
+        android:layout_height="385dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="2dp">
+
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Question"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/optionRadioGroup"
+            android:layout_width="546dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="127dp"
+            tools:ignore="NotSibling">
+
+            <RadioButton
+                android:id="@+id/option1RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 1"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/option2RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 2"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/option3RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 3"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/option4RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 4"
+                android:textSize="16sp" />
+
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-</RelativeLayout>
+
