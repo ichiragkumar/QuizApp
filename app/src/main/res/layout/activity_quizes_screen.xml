@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="129dp"
-        android:layout_height="26dp"
+        android:layout_width="273dp"
+        android:layout_height="41dp"
         android:text="Hii Quizes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,45 +21,91 @@
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="313dp"
-        android:layout_height="150dp"
+        android:layout_width="97dp"
+        android:layout_height="101dp"
+        android:background="@drawable/shadow_background"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
-        app:srcCompat="@drawable/img_3"
-        android:background="@drawable/shadow_background"/>
+        app:layout_constraintVertical_bias="0.19"
+        app:srcCompat="@drawable/gk" />
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="313dp"
-        android:layout_height="150dp"
+        android:layout_width="94dp"
+        android:layout_height="102dp"
+        android:background="@drawable/shadow_background"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/img_3"
-        android:background="@drawable/shadow_background"/>
+        app:layout_constraintVertical_bias="0.418"
+        app:srcCompat="@drawable/politics" />
+
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="313dp"
-        android:layout_height="150dp"
+        android:layout_width="93dp"
+        android:layout_height="91dp"
+        android:background="@drawable/rounded_button_background"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867"
-        app:srcCompat="@drawable/img_3"
-        android:background="@drawable/shadow_background"/>
+        app:layout_constraintVertical_bias="0.643"
+        app:srcCompat="@drawable/maths" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="213dp"
+        android:layout_height="98dp"
+        android:gravity="center"
+        android:text="General Knowledge"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="GEO Politics"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Mathematics"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

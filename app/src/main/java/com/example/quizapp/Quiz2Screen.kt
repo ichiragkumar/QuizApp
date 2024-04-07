@@ -2,14 +2,16 @@ package com.example.quizapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-class Quiz1Screen : AppCompatActivity() {
+class Quiz2Screen : AppCompatActivity() {
 
     private lateinit var questionTextView: TextView
     private lateinit var optionRadioGroup: RadioGroup
@@ -26,23 +28,66 @@ class Quiz1Screen : AppCompatActivity() {
     private var score = 0
 
     private val questions = listOf(
-        Question("1.  What is the capital of France?", listOf("London", "Berlin", "Paris", "Madrid"), 2),
-        Question("2.  What is the largest planet in our solar system?", listOf("Earth", "Mars", "Jupiter", "Venus"), 2),
-        Question("3.  In which year was Python first released?", listOf("1989", "1991", "2000", "2010"), 0),
-        Question("4.  What is the symbol for the element gold?", listOf("Fe", "Au", "Cu", "Ag"), 1),
-        Question("5.  How many sides does a hexagon have?", listOf("4", "5", "6", "7"), 2),
-        Question("6.  What is the name of the tallest mountain in the world?", listOf("Mount Everest", "K2", "Kangchenjunga", "Lhotse"), 0),
-        Question("7.  Which search engine is developed by Google?", listOf("Bing", "DuckDuckGo", "Yahoo", "Google Search"), 3),
-        Question("8.  What is the largest planet in our solar system?", listOf("Earth", "Mars", "Jupiter", "Venus"), 2),
-        Question("9.  What is the scientific name for a human?", listOf("Homo Sapiens", "Panthera Leo", "Ursus Arctos", "Canis Lupus"), 0),
-        Question("10. What is the currency of Japan?", listOf("Euro", "Dollar", "Yen", "Yuan"), 2),
+        Question(
+            "1.  Which country is known as the 'Land of the Rising Sun'?",
+            listOf("China", "Japan", "South Korea", "Vietnam"),
+            1
+        ),
+        Question(
+            "2.  What is the capital of Australia?",
+            listOf("Sydney", "Melbourne", "Canberra", "Brisbane"),
+            2
+        ),
+        Question(
+            "3.  Which country is the world's largest producer of oil?",
+            listOf("United States", "Saudi Arabia", "Russia", "Iran"),
+            1
+        ),
+        Question(
+            "4.  What is the longest river \n in Africa?",
+            listOf("Nile", "Congo", "Niger", "Zambezi"),
+            0
+        ),
+        Question(
+            "5.  What is the official language of Brazil?",
+            listOf("Spanish", "Portuguese", "English", "French"),
+            1
+        ),
+        Question(
+            "6.  Which city is known as the \n 'City of Love'?",
+            listOf("Paris", "Rome", "Venice", "Florence"),
+            0
+        ),
+        Question(
+            "7.  What is the smallest country in the \n world by land area?",
+            listOf("Monaco", "Vatican City", "Nauru", "Maldives"),
+            1
+        ),
+        Question(
+            "8.  Which continent is the largest by land area?",
+            listOf("Asia", "Africa", "North America", "Europe"),
+            0
+        ),
+        Question(
+            "9.  What is the capital of South Africa?",
+            listOf("Pretoria", "Johannesburg", "Cape Town", "Bloemfontein"),
+            2
+        ),
+        Question(
+            "10. Which country is known as the \n 'Emerald Isle'?",
+            listOf("Scotland", "Ireland", "Greenland", "Iceland"),
+            1
+        ),
+
 
         // Add more questions here
     )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quiz1_screen)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_quiz2_screen)
+
+
 
         questionTextView = findViewById(R.id.questionTextView)
         optionRadioGroup = findViewById(R.id.optionRadioGroup)
@@ -81,7 +126,6 @@ class Quiz1Screen : AppCompatActivity() {
             onBackPressed()
         }
     }
-
     private fun updateQuestion() {
         val currentQuestion = questions[currentQuestionIndex]
         questionTextView.text = currentQuestion.question

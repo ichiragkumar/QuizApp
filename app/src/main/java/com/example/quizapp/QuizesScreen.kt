@@ -25,9 +25,25 @@ class QuizesScreen : AppCompatActivity() {
 
 
         // go to Quiz1
-        val gotoSignUpScreen = findViewById<ImageButton>(R.id.imageButton2)
-        gotoSignUpScreen.setOnClickListener {
+        val quiz1 = findViewById<ImageButton>(R.id.imageButton2)
+        quiz1.setOnClickListener {
             val intent = Intent(this, Quiz1Screen::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // go to Quiz2
+        val quiz2 = findViewById<ImageButton>(R.id.imageButton3)
+        quiz2.setOnClickListener {
+            val intent = Intent(this, Quiz2Screen::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // go to Quiz3
+        val quiz3 = findViewById<ImageButton>(R.id.imageButton5)
+        quiz3.setOnClickListener {
+            val intent = Intent(this, Quiz3Screen::class.java)
             startActivity(intent)
             finish()
         }
