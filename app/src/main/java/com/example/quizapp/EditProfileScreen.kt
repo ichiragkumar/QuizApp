@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -15,6 +16,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView.EdgeEffectFactory.EdgeDirection
 import com.example.quizapp.User
 import com.google.firebase.database.*
 import com.bumptech.glide.Glide
@@ -77,14 +79,24 @@ class EditProfileScreen : AppCompatActivity() {
         val emailTextView = findViewById<TextView>(R.id.textViewUserId)
         val userIdTextView = findViewById<TextView>(R.id.textViewSignupTime)
 
+        val textValurForPhoto = findViewById<TextView>(R.id.testvalueforphoto)
+        val userProfilePhoto = findViewById<ImageView>(R.id.imageButtonProfilePhoto)
+
         // Display user data in TextViews if user object is not null
         user?.let {
-            nameTextView.text = "Name: ${it.name}"
-            ageTextView.text = "Age: ${it.age}"
-            genderTextView.text = "Gender: ${it.gender}"
-            signupTimeTextView.text = "Signup Time: ${it.signupTime}"
-            emailTextView.text = "Email: ${it.email}"
+            nameTextView.text = "${it.name}"
+            ageTextView.text = " ${it.age}"
+            genderTextView.text = " ${it.gender}"
+            signupTimeTextView.text = " ${it.signupTime}"
+            emailTextView.text = "${it.email}"
             userIdTextView.text = "User ID: ${it.userId}"
+
+            textValurForPhoto.text = "${it.selectedImageUri}"
+            textValurForPhoto.text = it.selectedImageUri
+
+
+
+
         }
     }
 

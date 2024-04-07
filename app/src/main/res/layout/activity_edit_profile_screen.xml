@@ -10,17 +10,29 @@
     <!-- Adjust the margin as needed -->
 
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageViewProfilePhoto"-->
-<!--        android:layout_width="193dp"-->
-<!--        android:layout_height="149dp"-->
-<!--        android:src="@drawable/user"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.541"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.101" />-->
+    <ImageView
+        android:id="@+id/imageViewProfilePhoto"
+        android:layout_width="193dp"
+        android:layout_height="149dp"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.101" />
+
+    <TextView
+        android:id="@+id/testvalueforphoto"
+        android:layout_width="201dp"
+        android:layout_height="105dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947" />
 
     <TextView
         android:id="@+id/textViewName"
