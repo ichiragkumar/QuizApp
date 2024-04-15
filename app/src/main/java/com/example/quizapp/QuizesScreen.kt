@@ -48,6 +48,14 @@ class QuizesScreen : AppCompatActivity() {
             finish()
         }
 
+        // go to Quiz4
+        val quiz4 = findViewById<ImageButton>(R.id.imageButton6)
+        quiz4.setOnClickListener {
+            val intent = Intent(this, Quiz4Screen::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
 
     }

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.QuizApp"
         tools:targetApi="31">
         <activity
+            android:name=".Quiz4Screen"
+            android:exported="false" />
+        <activity
             android:name=".Quiz3Screen"
             android:exported="false" />
         <activity
